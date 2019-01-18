@@ -1,4 +1,4 @@
-# Laravel HiveOS Api
+# Laravel CoinMarketCap Api
 Laravel package for interacting with CoinMarketCap API
 
 ## Installation
