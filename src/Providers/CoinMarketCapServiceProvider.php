@@ -41,7 +41,7 @@ class CoinMarketCapServiceProvider extends ServiceProvider
     public function register()
     {
 
-        $this->app->singleton('coin-market-cap', function() {
+        $this->app->singleton('coinmarketcap', function() {
 
             return new Api();
             
@@ -54,6 +54,6 @@ class CoinMarketCapServiceProvider extends ServiceProvider
     */
     public function provides()
     {
-        return ['coin-market-cap'];
+        return ['coinmarketcap'];
     }
 }

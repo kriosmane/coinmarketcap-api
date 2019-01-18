@@ -12,6 +12,6 @@ class CoinMarketCap extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'coin-market-cap';
+        return 'coinmarketcap';
     }
 }
