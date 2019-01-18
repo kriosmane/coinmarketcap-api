@@ -1,0 +1,25 @@
+{
+    "name": "kriosmane/coinmarketcap-api",
+    "description": "Laravel package for interacting with CoinMarketCap Api",
+    "keywords": ["laravel", "coin marketcap", "api", "pro"],
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "homepage": "https://github.com/kriosmane/coinmarketcap-api",
+    "authors": [
+        {
+            "name": "Krios Mane",
+            "email": "krios.mane@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "KriosMane\\CoinMarketCap\\" : "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.1",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "prefer-stable": false
+}
