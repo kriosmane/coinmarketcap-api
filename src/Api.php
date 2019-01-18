@@ -10,27 +10,27 @@ class Api {
 
 
     /**
-     * 
+     * @var string
      */
     protected $api_key = '';
 
     /**
-     * 
+     * @var GuzzleHttp\Client
      */
     protected $http_client = null;
 
     /**
-     * 
+     * @var string
      */
     protected $endpoint = '';
 
     /**
-     * 
+     * @var boolean
      */
     protected $debug = false;
 
     /**
-     * 
+     * @var boolean
      */
     protected $verify = false;
 
@@ -60,7 +60,11 @@ class Api {
     }
 
     /**
+     * @param string $method
+     * @param array $params
+     * @param string $type
      * 
+     * @return array|boolean
      * 
      */
     public function _call( $method, $params , $type = 'GET')
@@ -100,12 +104,27 @@ class Api {
 
     }
 
-
     /**
      * List all cryptocurrencies 
      * Get a paginated list of all cryptocurrencies with latest market data. 
      * You can configure this call to sort by market cap or another market ranking field. 
      * Use the "convert" option to return market values in multiple fiat and cryptocurrency conversions in the same call.
+     * Possible parameters are:
+     *      name: The cryptocurrency name.
+     *      symbol: The cryptocurrency symbol.
+     *      date_added: Date cryptocurrency was added to the system.
+     *      market_cap: market cap (latest trade price x circulating supply).
+     *      price: latest average trade price across markets.
+     *      circulating_supply: approximate number of coins currently in circulation.
+     *      total_supply: approximate total amount of coins in existence right now (minus any coins that have been verifiably burned).
+     *      max_supply: our best approximation of the maximum amount of coins that will ever exist in the lifetime of the currency.
+     *      num_market_pairs: number of market pairs across all exchanges trading each currency.
+     *      volume_24h: 24 hour trading volume for each currency.
+     *      percent_change_1h: 1 hour trading price percentage change for each currency.
+     *      percent_change_24h: 24 hour trading price percentage change for each currency.
+     *      percent_change_7d: 7 day trading price percentage change for each currency.
+     * 
+     * @param array $params
      */
     public function all_cryptos( $params = [])
     {
