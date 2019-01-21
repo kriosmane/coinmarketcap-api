@@ -105,6 +105,48 @@ class Api {
     }
 
     /**
+     * Set to true or set to a PHP stream returned by fopen() to enable debug output with the handler used to send a request. 
+     * For example, when using cURL to transfer requests, cURL's verbose of CURLOPT_VERBOSE will be emitted. 
+     * When using the PHP stream wrapper, stream wrapper notifications will be emitted. 
+     * If set to true, the output is written to PHP's STDOUT. 
+     * If a PHP stream is provided, output is written to the stream
+     * 
+     * @param boolean $debug
+     * @return void
+     */
+    public function setDebug($debug)
+    {
+        $this->debug = $debug;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getDebug()
+    {
+        return $this->debug;
+    }
+
+    /**
+     * Describes the SSL certificate verification behavior of a request.
+     * 
+     * @param boolean $verify
+     * @return void
+     */
+    public function setVerify($verify)
+    {
+        $this->verify = $verify;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getVerify()
+    {
+        return $this->verify;
+    }
+
+    /**
      * List all cryptocurrencies 
      * Get a paginated list of all cryptocurrencies with latest market data. 
      * You can configure this call to sort by market cap or another market ranking field. 
@@ -125,6 +167,7 @@ class Api {
      *      percent_change_7d: 7 day trading price percentage change for each currency.
      * 
      * @param array $params
+     * @return array
      */
     public function all_cryptos( $params = [])
     {
