@@ -8,7 +8,7 @@ Laravel package for interacting with CoinMarketCap API
 To get the latest version simply run the code below in your project.
 
 ```
-composer require krios-mane/coinmarketcap-api
+composer require kriosmane/coinmarketcap-api
 ```
 Once is installed you need to register the service provider. Open up `config/app.php` and add the following to the `providers` key.
 
