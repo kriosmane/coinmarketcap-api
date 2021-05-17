@@ -8,7 +8,7 @@ Laravel package for interacting with CoinMarketCap API
 To get the latest version simply run the code below in your project.
 
 ```
-composer require krios-mane/coinmarketcap-api
+composer require kriosmane/coinmarketcap-api
 ```
 Once is installed you need to register the service provider. Open up `config/app.php` and add the following to the `providers` key.
 
@@ -70,6 +70,7 @@ return CoinMarketCapApi::all_cryptos();
 Please feel free to fork this package and contribute by submitting a pull request to enhance the functionalities.
 
 ## How can I thank you?
+As a programmer i need coffee to be productive, don't let my [cup](https://www.buymeacoffee.com/kriosmane) get emtpy
 
 Why not star the github repo? I'd love the attention! Why not share the link for this repository on Twitter or HackerNews? Spread the word!
 
