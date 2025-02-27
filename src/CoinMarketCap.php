@@ -50,10 +50,10 @@ class CoinMarketCap
             } elseif (strtolower($method) === 'post') {
                 $response = $response->post($baseUrl . $url, $params);
             }
-
+            
             // Check if the request was successful
             if ($response->successful()) {
-                return json_decode($response->json(), true); // Decode and return JSON response
+                return $response->json(); // Decode and return JSON response
             } else {
                 return null; // Return null if the request was unsuccessful
             }
