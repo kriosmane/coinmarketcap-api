@@ -32,7 +32,7 @@
         "Kriosmane\\CoinMarketCap\\Providers\\CoinMarketCapServiceProvider"
       ],
       "aliases": {
-        "OpenStreetMap": "Kriosmane\\CoinMarketCap\\Facades\\CoinMarketCap"
+        "CoinMarketCap": "Kriosmane\\CoinMarketCap\\Facades\\CoinMarketCap"
       }
     }
   },
