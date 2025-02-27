@@ -1,3 +1,6 @@
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/kriosmane/coinmarketcap-api.svg?style=flat-square)](https://packagist.org/packages/kriosmane/coinmarketcap-api)
+[![Total Downloads](https://img.shields.io/packagist/dt/kriosmane/coinmarketcap-api.svg?style=flat-square)](https://packagist.org/packages/kriosmane/coinmarketcap-api)
+
 # Laravel CoinMarketCap Api
 Laravel package for interacting with CoinMarketCap API
 
