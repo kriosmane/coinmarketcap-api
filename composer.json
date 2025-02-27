@@ -1,6 +1,6 @@
 {
   "name": "kriosmane/coinmarketcap-api",
-  "description": "Laravel package for interacting with CoinMarketCap Api",
+  "description": "Laravel package for interacting with CoinMarketCap API",
   "keywords": [
     "laravel",
     "coin marketcap",
@@ -18,13 +18,12 @@
   ],
   "autoload": {
     "psr-4": {
-      "KriosMane\\CoinMarketCap\\": "src/"
+      "Kriosmane\\CoinMarketCap\\": "src/"
     }
   },
   "minimum-stability": "dev",
   "require": {
-    "php": "^8.0|^8.1|^8.2|^8.3|^8.4",
-    "guzzlehttp/guzzle": "^6.3|^7.0.1"
+    "php": "^8.0|^8.1|^8.2|^8.3"
   },
   "extra": {
     "laravel": {
