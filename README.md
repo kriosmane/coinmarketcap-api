@@ -1,87 +1,87 @@
+# Laravel CoinMarketCap API
+
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/kriosmane/coinmarketcap-api.svg?style=flat-square)](https://packagist.org/packages/kriosmane/coinmarketcap-api)
 [![Total Downloads](https://img.shields.io/packagist/dt/kriosmane/coinmarketcap-api.svg?style=flat-square)](https://packagist.org/packages/kriosmane/coinmarketcap-api)
 
-# Laravel CoinMarketCap Api
-Laravel package for interacting with CoinMarketCap API
+A Laravel package for interacting with the CoinMarketCap API.
 
-## Installation
+## 🚀 Installation
 
-[PHP](https://php.net) 7.1+ and [Composer](https://getcomposer.org) are required.
+Laravel 11 requires **PHP 8.1+** and **Composer**.
 
-To get the latest version simply run the code below in your project.
+To install the latest version, run:
 
-```
+```bash
 composer require kriosmane/coinmarketcap-api
 ```
-Once is installed you need to register the service provider. Open up `config/app.php` and add the following to the `providers` key.
 
+### 📌 Service Provider & Facade (Not Required for Laravel 11)
+
+From Laravel 11, service providers and facades are auto-discovered. However, if you need to register them manually, add the following to your `config/app.php` file:
+
+#### Service Provider (Only if required)
 ```php
 'providers' => [
-    ...
     KriosMane\CoinMarketCap\Providers\CoinMarketCapServiceProvider::class,
-    ...
-]
+],
 ```
 
-Also, register the Facade like so:
-
+#### Facade (Only if required)
 ```php
 'aliases' => [
-    ...
-    'CoinMarketCapApi' => KriosMane\CoinMarketCap\Facades\CoinMarketCap::class 
-    ...
-]
+    'CoinMarketCapApi' => KriosMane\CoinMarketCap\Facades\CoinMarketCap::class,
+],
 ```
 
-## Configuration
+## ⚙️ Configuration
 
-You can publish the configuration file using this command:
+Publish the configuration file using:
 
 ```bash
 php artisan vendor:publish --provider="KriosMane\CoinMarketCap\Providers\CoinMarketCapServiceProvider"
 ```
 
-A configuration-file named `coinmarketcap.php` with default settings will be placed in your `config` directory:
+This will create a `coinmarketcap.php` file in your `config` directory.
 
-You can visit this link to get your CoinMarketCap API key
+Get your **CoinMarketCap API Key** from:
 
+🔗 [CoinMarketCap API](https://pro.coinmarketcap.com/login/)
+
+Then, add the key to your `.env` file:
+
+```env
+CMC_API_KEY=your-api-key-here
 ```
-https://pro.coinmarketcap.com/login/
-```
 
-## Usage
+## 📖 Usage
 
-Open your .env file and add the following in this format. Ensure you must have gotten your api key:
+You can start using the API in your controllers or services:
 
 ```php
-CMC_API_KEY=********-****-****-****-**********
+use CoinMarketCap;
+
+// Get latest cryptocurrency listings
+$cryptos = CoinMarketCap::listCryptos();
+
+// Get latest market quotes for a specific cryptocurrency
+$quotes = CoinMarketCap::getQuotes(['symbol' => 'BTC,ETH']);
 ```
 
-Add the following line to your controller
+## 🤝 Contributing
 
-```php
-use \CoinMarketCapApi;
+Feel free to fork this repository and submit a pull request to enhance its functionality.
 
+## ☕ How can I thank you?
 
-return CoinMarketCapApi::all_cryptos();
+If you found this package helpful, consider buying me a coffee!  
+[☕ Buy me a coffee](https://www.buymeacoffee.com/kriosmane)  
 
+⭐ Star the repo, share it on Twitter, or post about it on HackerNews. Spread the word!
 
-```
+Thank you!  
+**Krios Mane**
 
-## Contributing
-
-Please feel free to fork this package and contribute by submitting a pull request to enhance the functionalities.
-
-## How can I thank you?
-As a programmer i need coffee to be productive, don't let my [cup](https://www.buymeacoffee.com/kriosmane) get emtpy
-
-Why not star the github repo? I'd love the attention! Why not share the link for this repository on Twitter or HackerNews? Spread the word!
-
-
-Thanks!
-Krios Mane
-
-## License
+## 📜 License
 
 Please see [License File](LICENSE.md) for more information.
 

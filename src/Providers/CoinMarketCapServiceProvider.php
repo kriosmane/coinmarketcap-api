@@ -2,20 +2,11 @@
 
 namespace KriosMane\CoinMarketCap\Providers;
 
-use KriosMane\CoinMarketCap\Api;
-
+use KriosMane\CoinMarketCap\CoinMarketCap;
 use Illuminate\Support\ServiceProvider;
 
 class CoinMarketCapServiceProvider extends ServiceProvider
 {   
-
-    /*
-    * Indicates if loading of the provider is deferred.
-    *
-    * @var bool
-    */
-    protected $defer = true;
-
     /**
      * Bootstrap services.
      *
@@ -23,14 +14,10 @@ class CoinMarketCapServiceProvider extends ServiceProvider
      */
     public function boot()
     {   
-
-        $config = realpath(__DIR__.'/../config/coinmarketcap.php');
-
         $this->publishes([
+            __DIR__.'/../config/coinmarketcap.php' => config_path('coinmarketcap.php'),
+        ], 'config');
 
-            $config => config_path('coinmarketcap.php')
-
-        ]);
     }
 
     /**
@@ -40,20 +27,10 @@ class CoinMarketCapServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->mergeConfigFrom(__DIR__.'/../config/coinmarketcap.php', 'coinmarketcap');
 
-        $this->app->singleton('coinmarketcap', function() {
-
-            return new Api();
-            
+        $this->app->singleton(Api::class, function ($app) {
+            return new CoinMarketCap(config('coinmarketcap'));
         });
-    }
-
-    /**
-    * Get the services provided by the provider
-    * @return array
-    */
-    public function provides()
-    {
-        return ['coinmarketcap'];
     }
 }
