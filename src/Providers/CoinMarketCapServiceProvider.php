@@ -13,9 +13,12 @@ class CoinMarketCapServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-    {   
+    {          
+       /**
+         *  Publish the configuration file (tag: config)
+         */
         $this->publishes([
-            __DIR__.'/../config/coinmarketcap.php' => config_path('coinmarketcap.php'),
+            __DIR__.'/../../config/coinmarketcap.php' => config_path('coinmarketcap.php'),
         ], 'config');
 
     }
