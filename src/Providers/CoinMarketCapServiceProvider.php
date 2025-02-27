@@ -1,8 +1,8 @@
 <?php
 
-namespace KriosMane\CoinMarketCap\Providers;
+namespace Kriosmane\CoinMarketCap\Providers;
 
-use KriosMane\CoinMarketCap\CoinMarketCap;
+use Kriosmane\CoinMarketCap\CoinMarketCap;
 use Illuminate\Support\ServiceProvider;
 
 class CoinMarketCapServiceProvider extends ServiceProvider
@@ -32,7 +32,7 @@ class CoinMarketCapServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../../config/coinmarketcap.php', 'coinmarketcap');
 
-        $this->app->singleton(Api::class, function ($app) {
+        $this->app->singleton(CoinMarketCap::class, function ($app) {
             return new CoinMarketCap(config('coinmarketcap'));
         });
     }

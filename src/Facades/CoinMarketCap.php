@@ -1,9 +1,9 @@
 <?php
 
-namespace KriosMane\CoinMarketCap\Facades;
+namespace Kriosmane\CoinMarketCap\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use KriosMane\CoinMarketCap\CoinMarketCap as CoinMarketCapClass;    
+use Kriosmane\CoinMarketCap\CoinMarketCap as CoinMarketCapClass;    
 
 class CoinMarketCap extends Facade
 {
