@@ -30,7 +30,7 @@ class CoinMarketCapServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/coinmarketcap.php', 'coinmarketcap');
+        $this->mergeConfigFrom(__DIR__.'/../../config/coinmarketcap.php', 'coinmarketcap');
 
         $this->app->singleton(Api::class, function ($app) {
             return new CoinMarketCap(config('coinmarketcap'));
