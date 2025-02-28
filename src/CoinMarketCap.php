@@ -50,7 +50,7 @@ class CoinMarketCap
             } elseif (strtolower($method) === 'post') {
                 $response = $response->post($baseUrl . $url, $params);
             }
-            
+
             // Check if the request was successful
             if ($response->successful()) {
                 return $response->json(); // Decode and return JSON response
@@ -75,6 +75,9 @@ class CoinMarketCap
      * This endpoint provides a list of the latest cryptocurrencies available on CoinMarketCap, 
      * including their current market data.
      *
+     * For more details on all available parameters, visit:
+     * https://coinmarketcap.com/api/documentation/v1/?ref=defiplot.com#operation/getV1CryptocurrencyListingsLatest
+     *
      * @param array $params Optional query parameters such as limit, convert currency, etc.
      * @return array|null Returns the response data or null in case of failure.
      */
@@ -88,6 +91,9 @@ class CoinMarketCap
      * 
      * This endpoint provides real-time market data for the requested cryptocurrencies, 
      * including price, volume, and market capitalization.
+     * 
+     * For more details on all available parameters, visit:
+     * https://coinmarketcap.com/api/documentation/v1/?ref=defiplot.com#operation/getV2CryptocurrencyQuotesLatest
      *
      * @param array $params Query parameters including cryptocurrency symbols or IDs.
      * @return array|null Returns the response data or null in case of failure.
