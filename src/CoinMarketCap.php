@@ -41,7 +41,9 @@ class CoinMarketCap
         try {
             // Initialize HTTP client with authentication headers
             $response = Http::withHeaders([
-                'X-CMC_PRO_API_KEY' => $this->config['api_key'], // API key required for authentication
+                'X-CMC_PRO_API_KEY' => $this->config['api_key'], // API key required for authentication,
+                'Accept' => 'application/json', // Set the response format to JSON
+                'Accept-Encoding' => 'deflate, gzip' // Enable gzip compression for faster response
             ]);
 
             // Send request based on method type
